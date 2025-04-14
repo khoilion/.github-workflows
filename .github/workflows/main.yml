@@ -1,25 +1,21 @@
 name: AI Commit
-
 on:
   push:
     branches:
       - main
-
 jobs:
   commit:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
       - name: Run your AI program
         run: |
           # Thêm logic xử lý AI của bạn ở đây
           echo "AI is processing the code..."
-
-          - name: Commit changes
-          run: |
-            git config --local user.email "zluffyz2002@gmail.com"
-            git config --local user.name "khoi_lion"
-            git add .
-            git diff --staged --quiet || (git commit -m "Automatic commit by AI" && git push)
+      - name: Commit changes
+        run: |
+          git config --local user.email "zluffyz2002@gmail.com"
+          git config --local user.name "khoi_lion"
+          git add .
+          git diff --staged --quiet || (git commit -m "Automatic commit by AI" && git push)
